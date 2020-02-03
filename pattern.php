@@ -23,6 +23,7 @@ for ($j = $str_len, $i = 0; $j > 0, $i < $str_len; $j -= 2, $i += 2) {
     echo $print;
 
         echo("\n");
+<<<<<<< HEAD
 
 
 }
@@ -34,6 +35,24 @@ for ($i = $str_len, $j = 0; $i >= 0, $j <= $str_len; $i -= 2, $j += 2) {
         $print = $print . substr($str2, $i, $str_len);
         echo $print;
         echo("\n");
+=======
+
+
+}
+for ($i = $str_len, $j = 0; $i >= 0, $j <= $str_len; $i -= 2, $j += 2) {
+    if ($j > 2) {
+        $print = substr($str1, 0, $j);
+        $print = $print . printSpace($i);
+        $print = $print . printSpace($i);
+        $print = $print . substr($str2, $i, $str_len);
+        echo $print;
+        echo("\n");
+
+    }
+
+
+}
+>>>>>>> 547c144bd2e2b8f9f1b8575fb1dcab7414600b8b
 
     }
 
