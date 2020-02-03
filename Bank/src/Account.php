@@ -48,9 +48,55 @@ class Account extends LessBalanceException {
 
 try {
     $b = new Account();
-    $b->createAccount("vibhor bhai", 5000);
-    $b->withDraw(4600);
-    $b->printBalance();
+    $input=1;
+    while ($input!=4)
+    {
+        echo "Enter 1 for Create Account\n";
+        echo "Enter 2 for Withdrow from  Account\n";
+        echo "Enter 3 for Deposit in  Account\n";
+        echo "Enter 4 to Exit \n";
+        $input = fgets(STDIN);
+
+        switch ($input)
+        {
+            case 1:
+            {
+                echo "Enter Name\n";
+                $name=fgets(STDIN);
+                echo "Enter Amount\n";
+                $amount=fgets(STDIN);
+                $b->createAccount($name, $amount);
+                break;
+            }
+            case 2:
+            {
+                echo "Enter Amount u want to withdrow \n";
+                $amount=fgets(STDIN);
+                $b->withDraw($amount);
+                break;
+            }
+            case 3:
+            {
+                echo "Enter Amount u want to Deposit \n";
+                $amount=fgets(STDIN);
+                $b->deposit($amount);
+                break;
+            }
+            case 4:
+            {
+                echo "Exit...";
+                $input=0;
+                exit;
+
+
+            }
+        }
+    }
+
+
+
+
+
 } catch (Exception $exception) {
     echo $exception->getMessage();
 }
